@@ -1,7 +1,6 @@
 # i3Geo Softwate básico 
-[![Docker Build Statu](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/synapsetec/i3geo-base/)
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/_/ubuntu/latest.svg)](https://hub.docker.com/r/synapsetec/i3geo-base)
-[![Docker Pulls](https://img.shields.io/docker/pulls/mashape/kong.svg)](https://hub.docker.com/r/synapsetec/i3geo-base/)
+[![Docker Build Statu](https://img.shields.io/docker/build/synapsetec/i3geo-base.svg)](https://hub.docker.com/r/synapsetec/i3geo-base/builds/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/synapsetec/i3geo-base.svg)](https://hub.docker.com/r/synapsetec/i3geo-base/builds/)
 
 O objetivo desta imagem Docker é prover o software básico para utilização do i3Geo. Para o desenvolvedor este é um mecanismo que apoia o processo de criação novas funcinalidades uma vez que todas as dependencias já estão instaladas nesta imagem.
 
