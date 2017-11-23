@@ -28,7 +28,8 @@ ENV DEPENDENCIAS  \
     libharfbuzz-dev \
     libcairo-dev \
     libgdal-dev \
-    cmake
+    cmake \ 
+    libapache2-mod-xsendfile
 RUN apt-get update && \
     export LANG=C.UTF-8 && \
     apt-get install --no-install-recommends -y build-essential && \
@@ -38,6 +39,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y ${DEPENDENCIAS} && \
     a2enmod rewrite && \
     a2enmod cgi && \
+    a2enmod xsendfile && \
     wget http://download.osgeo.org/mapserver/mapserver-7.0.6.tar.gz && \
     tar xvf mapserver-${MAPSERVER_VERSION}.tar.gz && \
     rm -f mapserver-${MAPSERVER_VERSION}.tar.gz && \
