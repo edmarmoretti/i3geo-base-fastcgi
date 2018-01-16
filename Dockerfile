@@ -62,6 +62,7 @@ RUN apt-get update && \
     echo extension=php_mapscript.so > /etc/php/5.6/mods-available/mapscript.ini && \
     phpenmod mapscript && \
     cd /var/www && \
+    touch /var/www/index.php && \
     ln -s /tmp/ms_tmp ms_tmp && \
     apt-get remove --purge -y wget cmake && \
     apt-get clean && \
