@@ -30,8 +30,7 @@ ENV DEPENDENCIAS  \
     libcairo-dev \
     libgdal-dev \
     cmake \ 
-    libapache2-mod-xsendfile \
-    libapache2-mod-fastcgi
+    libapache2-mod-xsendfile
 RUN apt-get update && \
     export LANG=C.UTF-8 && \
     apt-get install --no-install-recommends -y build-essential && \
@@ -42,9 +41,6 @@ RUN apt-get update && \
     a2enmod rewrite && \
     a2enmod cgi && \
     a2enmod xsendfile && \
-    a2enmod fastcgi && \
-    touch /usr/lib/cgi-bin/php5.fcgi && \
-    chown -R www-data:www-data /usr/lib/cgi-bin && \
     wget http://download.osgeo.org/mapserver/mapserver-7.0.6.tar.gz && \
     tar xvf mapserver-${MAPSERVER_VERSION}.tar.gz && \
     rm -f mapserver-${MAPSERVER_VERSION}.tar.gz && \
@@ -75,5 +71,4 @@ RUN apt-get update && \
 COPY ./docker/000-default.conf /etc/apache2/sites-available/
 COPY ./docker/php.ini /etc/php/5.6/apache2/
 COPY ./docker/ports.conf /etc/apache2/
-COPY ./docker/php5-fpm.conf /etc/apache2/conf-available/
 EXPOSE 8080
