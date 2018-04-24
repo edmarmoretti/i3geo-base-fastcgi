@@ -45,7 +45,6 @@ RUN apt-get update && \
     a2enmod fastcgi && \
     touch /usr/lib/cgi-bin/php5.fcgi && \
     chown -R www-data:www-data /usr/lib/cgi-bin && \
-    a2enconf php5-fpm && \
     wget http://download.osgeo.org/mapserver/mapserver-7.0.6.tar.gz && \
     tar xvf mapserver-${MAPSERVER_VERSION}.tar.gz && \
     rm -f mapserver-${MAPSERVER_VERSION}.tar.gz && \
@@ -77,4 +76,5 @@ COPY ./docker/000-default.conf /etc/apache2/sites-available/
 COPY ./docker/php.ini /etc/php/5.6/apache2/
 COPY ./docker/ports.conf /etc/apache2/
 COPY ./docker/php5-fpm.conf /etc/apache2/conf-available/
+a2enconf php5-fpm
 EXPOSE 8080
