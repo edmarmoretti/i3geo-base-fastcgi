@@ -39,7 +39,6 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install --no-install-recommends -y ${DEPENDENCIAS} && \
     a2enmod rewrite && \
-    a2enmod fpm && \
     a2enmod cgi && \
     a2enmod xsendfile && \
     wget http://download.osgeo.org/mapserver/mapserver-7.0.6.tar.gz && \
