@@ -30,7 +30,8 @@ ENV DEPENDENCIAS  \
     libcairo-dev \
     libgdal-dev \
     cmake \ 
-    libapache2-mod-xsendfile
+    libapache2-mod-xsendfile \
+    libapache2-mod-fastcgi
 RUN apt-get update && \
     export LANG=C.UTF-8 && \
     apt-get install --no-install-recommends -y build-essential && \
