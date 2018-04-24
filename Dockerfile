@@ -45,6 +45,7 @@ RUN apt-get update && \
     a2enmod fastcgi && \
     touch /usr/lib/cgi-bin/php5.fcgi && \
     chown -R www-data:www-data /usr/lib/cgi-bin && \
+    a2enconf php5-fpm && \
     wget http://download.osgeo.org/mapserver/mapserver-7.0.6.tar.gz && \
     tar xvf mapserver-${MAPSERVER_VERSION}.tar.gz && \
     rm -f mapserver-${MAPSERVER_VERSION}.tar.gz && \
