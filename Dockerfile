@@ -20,7 +20,6 @@ ENV DEPENDENCIAS  \
     php5.6-xsl \
     php5.6-imagick \
     php5.6-dev \
-    php5.6-fpm \
     memcached \
     wget \
     libfreetype6-dev \
