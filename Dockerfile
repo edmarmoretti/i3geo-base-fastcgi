@@ -20,6 +20,7 @@ ENV DEPENDENCIAS  \
     php5.6-xsl \
     php5.6-imagick \
     php5.6-dev \
+    php5.6-fpm \
     memcached \
     wget \
     libfreetype6-dev \
@@ -38,6 +39,7 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install --no-install-recommends -y ${DEPENDENCIAS} && \
     a2enmod rewrite && \
+    a2enmod fpm && \
     a2enmod cgi && \
     a2enmod xsendfile && \
     wget http://download.osgeo.org/mapserver/mapserver-7.0.6.tar.gz && \
@@ -52,7 +54,7 @@ RUN apt-get update && \
         -DWITH_CURL=ON \
         -DWITH_SOS=OFF \
         -DWITH_PHP=ON \
-        -DWITH_FCGI=OFF \
+        -DWITH_FCGI=ON \
         -DWITH_PYTHON=OFF \
         -DWITH_SVGCAIRO=OFF \
         -DWITH_GIF=OFF \
