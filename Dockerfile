@@ -37,9 +37,9 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y build-essential && \
     apt-get install --no-install-recommends -y software-properties-common && \
     add-apt-repository ppa:ondrej/php && \
-    apt-get update && \
-    apt-get install --no-install-recommends -y ${DEPENDENCIAS} && \
-    a2enmod rewrite && \
+    apt-get update
+RUN apt-get install --no-install-recommends -y ${DEPENDENCIAS}
+RUN a2enmod rewrite && \
     a2enmod cgi && \
     a2enmod xsendfile && \
     wget http://download.osgeo.org/mapserver/mapserver-7.0.6.tar.gz && \
@@ -65,12 +65,12 @@ RUN apt-get update && \
     phpenmod mapscript && \
     cd /var/www && \
     touch /var/www/index.php && \
-    ln -s /tmp/ms_tmp ms_tmp && \
-    a2enmod proxy_fcgi setenvif && \
+    ln -s /tmp/ms_tmp ms_tmp
+RUN a2enmod proxy_fcgi setenvif && \
     a2enconf php5.6-fpm && \
     a2dismod php5.6 mpm_prefork && \
-    a2enmod mpm_event && \
-    cp /etc/php/5.6/mods-available/mapscript.ini /etc/php/5.6/fpm/conf.d && \
+    a2enmod mpm_event
+RUN cp /etc/php/5.6/mods-available/mapscript.ini /etc/php/5.6/fpm/conf.d && \
     apt-get remove --purge -y wget cmake && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
