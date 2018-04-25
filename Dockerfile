@@ -4,6 +4,8 @@ ENV MAPSERVER_VERSION 7.0.6
 ENV DEPENDENCIAS  \
     apache2 \
     php5.6 \
+    php5.6-fpm \
+    libapache2-mod-fastcgi \
     php5.6-memcached \ 
     php5.6-cli \
     php5.6-mbstring \
@@ -64,6 +66,11 @@ RUN apt-get update && \
     cd /var/www && \
     touch /var/www/index.php && \
     ln -s /tmp/ms_tmp ms_tmp && \
+    a2enmod proxy_fcgi setenvif && \
+    a2enconf php5.6-fpm && \
+    a2dismod php5.6 mpm_prefork && \
+    a2enmod mpm_event && \
+    cp /etc/php/5.6/mods-available/mapscript.ini /etc/php/5.6/fpm/conf.d && \
     apt-get remove --purge -y wget cmake && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
