@@ -68,7 +68,6 @@ RUN a2enmod rewrite && \
     ln -s /tmp/ms_tmp ms_tmp
 RUN a2enmod proxy_fcgi setenvif
 RUN a2enconf php5.6-fpm
-RUN a2dismod php5.6 mpm_prefork
 RUN a2enmod mpm_event
 RUN cp /etc/php/5.6/mods-available/mapscript.ini /etc/php/5.6/fpm/conf.d && \
     apt-get remove --purge -y wget cmake && \
