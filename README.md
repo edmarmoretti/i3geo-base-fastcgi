@@ -10,7 +10,7 @@ Para utilizar em modo de desenvolvimento:
 *  Faça checkout do i3geo a partir do gitHub;
 *  Entre na pasta onde está o código;
 *  Digite o comando `docker run -it -p 80:8080 -v $PWD:/var/www/i3geo --rm i3geo/software-base`
-*  Inicie o apache `service apahe2 start`
+*  Inicie o apache `service apache2 start`
 *  Inicie o apache `service php5.6-fpm start`
 *  Acesso navegador e digite `http://localhost/i3geo`
 
