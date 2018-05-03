@@ -76,4 +76,6 @@ RUN cp /etc/php/5.6/mods-available/mapscript.ini /etc/php/5.6/fpm/conf.d && \
 COPY ./docker/000-default.conf /etc/apache2/sites-available/
 COPY ./docker/php.ini /etc/php/5.6/apache2/
 COPY ./docker/ports.conf /etc/apache2/
+COPY ./docker/php-fpm-envvar.sh /php-fpm-envvar.sh
+CMD source /php-fpm-envvar.sh
 EXPOSE 8080
