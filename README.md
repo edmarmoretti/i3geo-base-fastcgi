@@ -10,9 +10,14 @@ Para utilizar em modo de desenvolvimento:
 *  Faça checkout do i3geo a partir do gitHub;
 *  Entre na pasta onde está o código;
 *  Digite o comando `docker run -it -p 80:8080 -v $PWD:/var/www/i3geo --rm i3geo/i3geo-base-fastcgi`
+
+Após docker ser executado, o console já está dentro do contêiner, agora digite:
+
+*  Copia as variáveis de ambiente `/bin/bash -c 'source /php-fpm-envvar.sh'`
 *  Inicie o apache `apachectl apache2 start`
 *  Inicie o apache `service php5.6-fpm start`
-*  Acesso navegador e digite `http://localhost/i3geo`
+
+Acesse navegador e digite `http://localhost/i3geo`
 
 A conexão com o banco de dados pode ser definida por meio de variáveis de ambiente, exemplo:
 
