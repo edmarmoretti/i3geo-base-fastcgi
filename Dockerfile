@@ -54,7 +54,7 @@ RUN a2enmod rewrite && \
         -DWITH_CURL=ON \
         -DWITH_SOS=OFF \
         -DWITH_PHP=ON \
-        -DWITH_FCGI=ON \
+        -DWITH_FCGI=OFF \
         -DWITH_PYTHON=OFF \
         -DWITH_SVGCAIRO=OFF \
         -DWITH_GIF=OFF \
