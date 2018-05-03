@@ -14,7 +14,7 @@ Para utilizar em modo de desenvolvimento:
 Após docker ser executado, o console já está dentro do contêiner, agora digite:
 
 *  Copia as variáveis de ambiente `/bin/bash -c 'source /php-fpm-envvar.sh'`
-*  Inicie o apache `apachectl apache2 start`
+*  Inicie o apache `apachectl start`
 *  Inicie o apache `service php5.6-fpm start`
 
 Acesse navegador e digite `http://localhost/i3geo`
