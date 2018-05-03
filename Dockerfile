@@ -77,5 +77,5 @@ COPY ./docker/000-default.conf /etc/apache2/sites-available/
 COPY ./docker/php.ini /etc/php/5.6/apache2/
 COPY ./docker/ports.conf /etc/apache2/
 COPY ./docker/php-fpm-envvar.sh /php-fpm-envvar.sh
-RUN source /php-fpm-envvar.sh
+RUN /bin/bash -c 'source /php-fpm-envvar.sh'
 EXPOSE 8080
