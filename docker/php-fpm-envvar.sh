@@ -26,4 +26,7 @@ then
 fi
 echo "" >> /etc/php/5.6/fpm/pool.d/www.conf # new line.
 echo "php_admin_flag[default_charset] = ''" >>  /etc/php/5.6/fpm/pool.d/www.conf
-
+echo "" >> /etc/php/5.6/fpm/pool.d/www.conf # new line.
+echo "php_admin_flag[session.save_path] = 'tcp://127.0.0.1:11211'" >>  /etc/php/5.6/fpm/pool.d/www.conf
+echo "" >> /etc/php/5.6/fpm/pool.d/www.conf # new line.
+echo "php_admin_flag[session.save_handler] = memcache" >>  /etc/php/5.6/fpm/pool.d/www.conf
