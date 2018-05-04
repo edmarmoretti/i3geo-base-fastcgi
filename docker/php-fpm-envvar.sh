@@ -24,3 +24,6 @@ if ! [ -z "$DB_PASSWORD" ]
 then
     echo "env[DB_PASSWORD] = $DB_PASSWORD;" >>  /etc/php/5.6/fpm/pool.d/www.conf
 fi
+echo "" >> /etc/php/5.6/fpm/pool.d/www.conf # new line.
+echo "php_admin_flag[default_charset] = ''" >>  /etc/php/5.6/fpm/pool.d/www.conf
+
