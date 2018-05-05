@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ENV MAPSERVER_VERSION 7.0.6
+ENV MAPSERVER_VERSION 7.0.7
 ENV DEPENDENCIAS  \
     apache2 \
     php5.6 \
@@ -42,7 +42,7 @@ RUN apt-get install --no-install-recommends -y ${DEPENDENCIAS}
 RUN a2enmod rewrite && \
     a2enmod cgi && \
     a2enmod xsendfile && \
-    wget http://download.osgeo.org/mapserver/mapserver-7.0.6.tar.gz && \
+    wget http://download.osgeo.org/mapserver/mapserver-7.0.7.tar.gz && \
     tar xvf mapserver-${MAPSERVER_VERSION}.tar.gz && \
     rm -f mapserver-${MAPSERVER_VERSION}.tar.gz && \
     cd mapserver-${MAPSERVER_VERSION}/ && \
