@@ -46,6 +46,8 @@ echo "pm.max_requests = 200" >>  /etc/php/5.6/fpm/pool.d/www.conf
 echo "" >> /etc/php/5.6/fpm/pool.d/www.conf # new line.
 echo "pm.process_idle_timeout = 5s" >>  /etc/php/5.6/fpm/pool.d/www.conf
 
+service php5.6-fpm start
+
 
 
 
