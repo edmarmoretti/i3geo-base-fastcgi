@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 ENV MAPSERVER_VERSION 7.0.7
 ENV DEPENDENCIAS  \
     apache2 \
-    spawn-fcgi \
+    libfcgi-dev \
     php5.6 \
     php5.6-fpm \
     libapache2-mod-fastcgi \
@@ -55,7 +55,7 @@ RUN a2enmod rewrite && \
         -DWITH_CURL=ON \
         -DWITH_SOS=OFF \
         -DWITH_PHP=ON \
-        -DWITH_FCGI=OFF \
+        -DWITH_FCGI=ON \
         -DWITH_PYTHON=OFF \
         -DWITH_SVGCAIRO=OFF \
         -DWITH_GIF=OFF \
