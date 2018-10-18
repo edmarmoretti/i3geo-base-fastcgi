@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ENV MAPSERVER_VERSION 7.0.7
+ENV MAPSERVER_VERSION 7.2.1
 ENV DEPENDENCIAS  \
     apache2 \
     libfcgi-dev \
@@ -32,7 +32,8 @@ ENV DEPENDENCIAS  \
     libcairo-dev \
     libgdal-dev \
     cmake \ 
-    libapache2-mod-xsendfile
+    libapache2-mod-xsendfile \
+    protobuf-c-compiler
 RUN apt-get update && \
     export LANG=C.UTF-8 && \
     apt-get install --no-install-recommends -y build-essential && \
@@ -43,7 +44,7 @@ RUN apt-get install --no-install-recommends -y ${DEPENDENCIAS}
 RUN a2enmod rewrite && \
     a2enmod cgi && \
     a2enmod xsendfile && \
-    wget http://download.osgeo.org/mapserver/mapserver-7.0.7.tar.gz && \
+    wget http://download.osgeo.org/mapserver/mapserver-7.2.1.tar.gz && \
     tar xvf mapserver-${MAPSERVER_VERSION}.tar.gz && \
     rm -f mapserver-${MAPSERVER_VERSION}.tar.gz && \
     cd mapserver-${MAPSERVER_VERSION}/ && \
