@@ -24,6 +24,7 @@ ENV DEPENDENCIAS  \
     php5.6-imagick \
     php5.6-dev \
     memcached \
+    iputils-ping \
     wget \
     libfreetype6-dev \
     libproj-dev \
